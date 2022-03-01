@@ -8,7 +8,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#E6E6FA',
         alignItems: 'flex-start',
         padding: 25,
-        marginLeft: 20
+        marginLeft: 20,
+        justifyContent: 'space-between',
+        display: 'flex',
+        borderRadius: 10,
     },
 
     textContext: {
@@ -36,7 +39,13 @@ const styles = StyleSheet.create({
         marginTop: 5,
         alignItems: 'center',
         justifyContent: 'center',
-    }
+    },
+
+    button: {
+        backgroundColor: '#E6E6FA',
+        color: '#E6E6FA',
+        height: 100,
+    },
 });
 
 export default styles

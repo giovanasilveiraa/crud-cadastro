@@ -1,6 +1,9 @@
 import React from "react";
-import { View, Text, TextInput, Button, Image } from 'react-native';
+import { View, Text, TextInput, Button, Image, Alert } from 'react-native';
+import SweetAlert from 'react-native-sweet-alert';
+import Button from ''
 import styles from './style';
+
 
 export default function Form(){
     return(
@@ -22,7 +25,7 @@ export default function Form(){
                 <TextInput style={styles.inputContext} placeholder="Ex: mariasilva@gmail.com"/>
                         
             </View>
-            <Button title="CADASTRAR CLIENTE"/>
+           <Button/>
         </View>
     );
 }
