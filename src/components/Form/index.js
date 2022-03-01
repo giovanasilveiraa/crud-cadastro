@@ -6,7 +6,7 @@ export default function Form(){
     return(
         <View style={styles.homeContext}>
             <View>
-                <Image style={styles.image} source={require('../Form/user.png')}/>
+                <Image style={styles.image} source={require('../Form/assets/user.png')}/>
                 <Text style={styles.textContext}>Nome</Text>
                 <TextInput style={styles.inputContext} placeholder="Ex: Maria da Silva"/>
             
