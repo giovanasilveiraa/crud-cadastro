@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Button, Icon } from 'react-native-elements';
 import Userlist from './src/Views/UserList';
@@ -45,6 +46,13 @@ export default props => {
       </UsersProvider>
     )
 }
+const style = StyleSheet.create({
+  title : {
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 50
+  }
+})
 
 const screenOptions = {
   headerStyle: {

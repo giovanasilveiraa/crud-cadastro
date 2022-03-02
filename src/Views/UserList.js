@@ -1,18 +1,21 @@
 import React, { useContext } from 'react';
-import { View, FlatList, Alert } from 'react-native';
+import { View, FlatList, Alert, StyleSheet } from 'react-native';
 import { ListItem, Avatar } from 'react-native-elements';
 import UsersContext from '../context/UsersContext';
 
 export default props => {
 
-    const { state } = useContext(UsersContext)
+    const { state, dispatch } = useContext(UsersContext)
 
     function deleteUser(user) {
         Alert.alert('Excluir usuário','Deseja excluir o usuário?', [
             {
                 text: 'Sim',
                 onPress() {
-                    console.warn('o usuário ' +(user.name)+ ' foi excluído')
+                    dispatch({
+                      type:'deleteUser',
+                      payload: user,
+                    })
                 }
             },
             {
@@ -23,6 +26,7 @@ export default props => {
 
     const getUserItem = ({ item: user }) => (
         <ListItem
+          style={style.list}
           bottomDivider
           onPress={() => props.navigation.navigate('User', user)}>
           <Avatar source={{ uri: user.avatarUrl }} />
@@ -57,3 +61,15 @@ export default props => {
         </View>
       )
 };
+
+const style = StyleSheet.create({
+  list : {
+    marginTop :20,
+    marginBottom: 5,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  border : {
+    borderRadius: 10,
+  }
+})
