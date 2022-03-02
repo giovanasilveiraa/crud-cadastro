@@ -1,31 +1,57 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Alert } from 'react-native';
 import { ListItem, Avatar } from 'react-native-elements';
 import users from '../data/users'
 
 export default props => {
 
-    function getUserItem({ item: user }) {
-        return (
-            <ListItem 
-            leftAvatar={{source: {uri: user.avatarUrl}}}
-            key={user.id}
-            title={user.name}
-            subtitle={user.email}
-            bottomDivider
-        
-        />
-        )
-        
+    function deleteUser(user) {
+        Alert.alert('Excluir usuário','Deseja excluir o usuário?', [
+            {
+                text: 'Sim',
+                onPress() {
+                    console.warn('o usuário ' +(user.name)+ ' foi excluído')
+                }
+            },
+            {
+                text: 'Não'
+            }
+        ])
     }
 
-    return (
+    const getUserItem = ({ item: user }) => (
+        <ListItem
+          bottomDivider
+          onPress={() => props.navigation.navigate('User', user)}>
+          <Avatar source={{ uri: user.avatarUrl }} />
+          <ListItem.Content>
+            <ListItem.Title>{user.name}</ListItem.Title>
+            <ListItem.Subtitle>{user.Cpf}</ListItem.Subtitle>
+            <ListItem.Subtitle>{user.nasc}</ListItem.Subtitle>
+            <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
+          </ListItem.Content>
+          <ListItem.Chevron
+            name="edit"
+            size={25}
+            color="#2e8b57"
+            onPress={() => props.navigation.navigate('User', user)}
+          />
+          <ListItem.Chevron
+            name="delete"
+            size={25}
+            color="#ff6347"
+            onPress={() => deleteUser(user)}
+          />
+        </ListItem>
+      );
+    
+      return (
         <View>
-            <FlatList
-                keyExtractor={user => user.id.toString()}
-                data={users}
-                renderItem={getUserItem}
-            />
+          <FlatList
+            keyExtractor={(user) => user.id.toString()}
+            data={users}
+            renderItem={getUserItem}
+          />
         </View>
-    )
-}
+      )
+};

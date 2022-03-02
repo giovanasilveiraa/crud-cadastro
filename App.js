@@ -23,7 +23,7 @@ export default props => {
                           <Button
                             onPress={() => navigation.navigate("User")}
                             type="clear"
-                            icon={<Icon name="add" size={25} color="white" />}
+                            icon={<Icon name="add" size={25} color="black" />}
                           />
                         )
                       }
@@ -47,7 +47,7 @@ const screenOptions = {
   headerStyle: {
     backgroundColor: '#E6E6FA'
   },
-  headerTintColor: '#fff',
+  headerTintColor: '#000',
   headerTitleStyle: {
     fontWeight: 'bold',
   }

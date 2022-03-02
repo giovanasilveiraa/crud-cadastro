@@ -5,7 +5,7 @@ export default [
         Cpf:  '123.456.789-10',
         nasc: '27/10/1982',
         email: 'marianealmeida@gmail.com',
-        avatarUrl: 'https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png',
+        avatarUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ export default [
         Cpf:  '987.654.321-01',
         nasc: '02/02/1999',
         email: 'joaosilva@gmail.com',
-        avatarUrl: 'https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png',
+        avatarUrl: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png',
     },
     {
         id: 3,
@@ -21,6 +21,6 @@ export default [
         Cpf:  '233.435.665-77',
         nasc: '13/05/1988',
         email: 'raquellara@gmail.com',
-        avatarUrl: 'https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png',
+        avatarUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
     },
 ];
