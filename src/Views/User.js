@@ -46,7 +46,6 @@ export default ({route, navigation}) => {
 
            <Text style={style.text}>Email</Text>
            <TextInput style={style.input}
-                keyboardType="email-adress"
                 onChangeText={email => setUser({...user, email})}
                 placeholder="Ex: mariasilva@gmail.com"
                 value={user.email}
