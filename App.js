@@ -4,11 +4,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Button, Icon } from 'react-native-elements';
 import Userlist from './src/Views/UserList';
 import User from './src/Views/User';
+import { UsersProvider } from './src/context/UsersContext';
 
 const Stack = createNativeStackNavigator()
 
 export default props => {
     return (    
+      <UsersProvider>
         <NavigationContainer>
             <Stack.Navigator inicialRoutName="UserList"
                              screenOptions={screenOptions}>
@@ -40,12 +42,13 @@ export default props => {
             
             </Stack.Navigator>
         </NavigationContainer>
+      </UsersProvider>
     )
 }
 
 const screenOptions = {
   headerStyle: {
-    backgroundColor: '#E6E6FA'
+    backgroundColor: '#E6E6FA',
   },
   headerTintColor: '#000',
   headerTitleStyle: {

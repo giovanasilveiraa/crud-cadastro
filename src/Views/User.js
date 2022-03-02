@@ -45,6 +45,7 @@ export default ({route, navigation}) => {
             <Button
                 style={style.button}
                 title="Salvar usuário"
+                color="#4682B4"
                 onPress={() => {
                     navigation.goBack()
                 }}
